@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width:device-width, initial-scale=1">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+			<style>
+				body {
+					font-family: "Lato", sans-serif;
+					transition: background-color .3s;
+				}
+
+				.sidenav {
+					height: 100%;
+					width: 0;
+					position: fixed;
+					z-index: 1;
+					top: 0;
+					left: 0;
+					background-color: #111;
+					overflow-x: hidden;
+					transition: 0.3s;
+				}
+
+				.sidenav a {
+					text-decoration: none;
+					font-size: 20px;
+					color: #818181;
+					transition: 0s;
+					margin-left: 15px;
+					/* left: -150px; */
+					width: 200px;
+				}
+
+				#uv2, #uv3, #uv4, #uv5, #uv6, #uv7, #uv8{
+					display: none;
+				}
+
+				.sidenav a:hover {
+					color: #f1f1f1;
+				}
+
+				.sidenav .closebtn {
+					top: 0;
+					font-size: 36px;
+					margin-left: 30px;
+					margin-top: -10px;
+				}
+
+				#main {
+					transition: margin-left .3s;
+					padding-top: 8px;
+				}
+
+				@media screen and (max-height: 450px) {
+					.sidenav {padding-top: 15px;}
+					.sidenav a {font-size: 18px;}
+				}
+			</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+          			<a href="#"><span id="main" style="font-size:30px;cursor:pointer" onclick="setTimeout(openNav,0);setTimeout(openNavv,300)">&#9776; </span></a>
+          			<div id="mySidenav" class="sidenav">
+					  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeNavv();">&times;</a><br>
+					  	<a id="uv2" href="#">Home</a><br>
+					  	<a id="uv3" href="#">Initiatives</a><br>
+					  	<a id="uv4" href="#">Events</a><br>
+					  	<a id="uv5" href="#">Blogs</a><br>
+					  	<a id="uv6" href="#">News Letters</a><br>
+						<a id="uv7" href="#">Achivements</a><br>
+						<a id="uv8" href="/loginpage">Login</a><br>
+					</div>
+        		</li>
+			</ul>
+			<ul id="topnav" class="nav navbar-nav navbar-right" style="right:100px; font-size: 20px;">
+				<li><a href="/loginpage" id="loginbtn"><span style="margin-right: 5px;" class="glyphicon glyphicon-question-sign "> </span>Login</a></li>
+				<!-- <li><a href="/register"><span class="glyphicon glyphicon-user "> </span>Sign Up</a></li> -->
+			</ul>
+		</div>
+	</nav>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "200px";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+		function openNavv(){
+			for(i=2;i<9;i++){
+				document.getElementById("uv"+i).style.display = "block";
+			}
+		}
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft= "0";
+			document.body.style.backgroundColor = "white";
+		}
+		function closeNavv(){
+			for(i=2;i<9;i++){
+				document.getElementById("uv"+i).style.display = "none";
+			}	
+		}
+	</script>
+</body>
+</html>
